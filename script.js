@@ -14,7 +14,8 @@ const translations = {
         getInTouch: "Get in Touch",
         aboutUs: "About Us",
         privacyPolicy: "Privacy Policy",
-        termsOfService: "Terms of Service"
+        termsOfService: "Terms of Service",
+        info: "Info"
     },
     hi: {
         title: "आपका मानसिक स्वास्थ्य साथी",
@@ -31,7 +32,8 @@ const translations = {
         getInTouch: "संपर्क में रहें",
         aboutUs: "हमारे बारे में",
         privacyPolicy: "गोपनीयता नीति",
-        termsOfService: "सेवा की शर्तें"
+        termsOfService: "सेवा की शर्तें",
+        info: "जानकारी"
     },
     es: {
         title: "Tu Compañero de Bienestar Mental",
@@ -48,7 +50,8 @@ const translations = {
         getInTouch: "Póngase en Contacto",
         aboutUs: "Sobre Nosotros",
         privacyPolicy: "Política de Privacidad",
-        termsOfService: "Términos de Servicio"
+        termsOfService: "Términos de Servicio",
+        info: "Información"
     }
 };
 
@@ -160,7 +163,7 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     const hamburger = document.querySelector('.hamburger');
 
-    navLinks.classList.toggle('active');
+    navLinks.classList.toggle('show');
     hamburger.classList.toggle('active');
 
     // Add this to prevent body scrolling when menu is open
@@ -192,11 +195,20 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 function toggleChatbot() {
-    const chatbot = document.getElementById('chatbot-popup');
-    if (chatbot.style.display === 'none' || chatbot.style.display === '') {
-        chatbot.style.display = 'block';
+    const chatbotPopup = document.getElementById('chatbot-popup');
+    const overlay = document.querySelector('.overlay');
+    const chatbotFrame = document.getElementById('chatbot-frame');
+
+    chatbotPopup.classList.toggle('active');
+    overlay.classList.toggle('active');
+
+    if (chatbotPopup.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+        // Set iframe dimensions
+        chatbotFrame.style.width = '100%';
+        chatbotFrame.style.height = 'calc(100% - 60px)';
     } else {
-        chatbot.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
 }
 

@@ -53,28 +53,26 @@
             <a href="features.html">Features</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
+            <a href="cards/index.html">Info</a>
             <a href="login.html" class="cta-button">Login</a>
         </nav>
     </header>
 
     <main class="hero">
         <div class="hero-content">
-            <h1>Your Mental Wellness Companion</h1>
+            <h1>Your Health Wellness Companion</h1>
             <p class="subtitle">Experience 24/7 support with our AI-powered mental health chatbot. Professional
                 guidance, emotional support, and practical tools - all in one place.</p>
-            <a href="#" class="chatbot-button pulse" onclick="toggleChatbot(); return false;">
+            <button class="start-chat-btn" onclick="toggleChatbot()">
                 <i class="fas fa-comments"></i>
-                <span>Start Chat</span>
-            </a>
+                Start Chat
+            </button>
         </div>
-
-        <div class="chat-preview">
-            <div class="chat-message">
-                Hello! I'm here to support you. How are you feeling today? 👋
-            </div>
-            <div class="chat-message">
-                Remember, you're not alone. Let's work through this together.
-            </div>
+        <div class="hero-video">
+            <video autoplay loop muted playsinline>
+                <source src="129731-745175056_small.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </main>
     <footer class="footer">
@@ -133,8 +131,9 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        <iframe id="chatbot-frame" src="chatbot.html" frameborder="0"></iframe>
+        <iframe id="chatbot-frame" src="chatbot.html" frameborder="0" width="100%" height="calc(100% - 60px)"></iframe>
     </div>
+    <div class="overlay" onclick="toggleChatbot()"></div>
 
     <script src="script.js"></script>
 </body>

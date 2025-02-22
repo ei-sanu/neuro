@@ -1,7 +1,7 @@
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.querySelector('.theme-icon');
 
-document.documentElement.setAttribute('data-theme', 
+document.documentElement.setAttribute('data-theme',
     localStorage.getItem('theme') || 'light'
 );
 
@@ -15,7 +15,7 @@ updateThemeIcon();
 themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
+
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon();
@@ -46,7 +46,7 @@ recognition.interimResults = false;
 
 function toggleVoiceInput() {
     const micButton = document.getElementById('mic-button');
-    
+
     if (!isListening) {
         recognition.start();
         isListening = true;

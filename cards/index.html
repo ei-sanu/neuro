@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Concerns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            min-height: 100vh;
+            padding: 6rem 2rem 2rem;
+            /* Added top padding for fixed header */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cardiovascular .card-icon {
+            background: #ffe5e5;
+            color: #ff4444;
+        }
+
+        .neurological .card-icon {
+            background: #e5f1ff;
+            color: #4477ff;
+        }
+
+        .respiratory .card-icon {
+            background: #e5ffe5;
+            color: #44ff44;
+        }
+
+        .infectious .card-icon {
+            background: #fff5e5;
+            color: #ffaa44;
+        }
+
+        .autoimmune .card-icon {
+            background: #f5e5ff;
+            color: #aa44ff;
+        }
+
+        .metabolic .card-icon {
+            background: #e5fff5;
+            color: #44ffaa;
+        }
+
+        .nav-header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transform: translateY(-100%);
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .nav-links a:nth-child(1) {
+            animation: fadeInUp 0.5s ease forwards 0.4s;
+        }
+
+        .nav-links a:nth-child(2) {
+            animation: fadeInUp 0.5s ease forwards 0.5s;
+        }
+
+        .nav-links a:nth-child(3) {
+            animation: fadeInUp 0.5s ease forwards 0.6s;
+        }
+
+        .nav-links a:hover {
+            background: #ff3333;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideDown {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav-header">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Neurowell</a>
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header">
+        <h1>Disease Concerns</h1>
+        <p>Learn about various health conditions and their management</p>
+    </div>
+
+    <div class="container">
+        <div class="card cardiovascular" onclick="location.href='cardio/project/index.html'">
+            <div class="card-icon">❤️</div>
+            <h3>Cardiovascular Health</h3>
+            <p>Learn about heart diseases, prevention strategies, and modern treatments available.</p>
+        </div>
+
+        <!-- <div class="card neurological" onclick="location.href='neurological.html'">
+            <div class="card-icon">🧠</div>
+            <h3>Neurological Disorders</h3>
+            <p>Understanding brain conditions, nerve disorders, and cognitive health.</p>
+        </div> -->
+
+        <div class="card respiratory" onclick="location.href='resp/project/index.html'">
+            <div class="card-icon">🫁</div>
+            <h3>Respiratory Issues</h3>
+            <p>Information about lung diseases, breathing problems, and respiratory health.</p>
+        </div>
+
+        <!-- <div class="card infectious" onclick="location.href='infectious.html'">
+            <div class="card-icon">🦠</div>
+            <h3>Infectious Diseases</h3>
+            <p>Learn about various infections, their spread, and prevention methods.</p>
+        </div> -->
+
+        <!-- <div class="card autoimmune" onclick="location.href='autoimmune.html'">
+            <div class="card-icon">🛡️</div>
+            <h3>Autoimmune Conditions</h3>
+            <p>Understanding autoimmune disorders and immune system health.</p>
+        </div> -->
+
+        <div class="card metabolic" onclick="location.href='project/index.html'">
+            <div class="card-icon">⚡</div>
+            <h3>Metabolic Disorders</h3>
+            <p>Information about metabolic health and related conditions.</p>
+        </div>
+    </div>
+       
+
+    <script>
+        // Animate cards on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+
+            // Observe cards for intersection with viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        // Add delay for staggered animation
+                        entry.target.style.transitionDelay = `${Array.from(cards).indexOf(entry.target) * 0.1}s`;
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe each card
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>

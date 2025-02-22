@@ -1,0 +1,277 @@
+/* Base styles */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.bg-gray-50 {
+    background-color: #F9FAFB;
+}
+
+.bg-red-600 {
+    background-color: #DC2626;
+}
+
+.bg-red-700 {
+    background-color: #B91C1C;
+}
+
+.text-white {
+    color: white;
+}
+
+.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Spacing */
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.mb-12 {
+    margin-bottom: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 0.75rem;
+}
+
+.mr-3 {
+    margin-right: 0.75rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+/* Flexbox */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+}
+
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+
+/* Typography */
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-gray-700 {
+    color: #374151;
+}
+
+/* Components */
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.rounded-t-lg {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Images */
+.w-full {
+    width: 100%;
+}
+
+.h-48 {
+    height: 12rem;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+/* Lists */
+.list-disc {
+    list-style-type: disc;
+}
+
+.list-inside {
+    list-style-position: inside;
+}
+
+.space-y-2 > * + * {
+    margin-top: 0.5rem;
+}
+
+/* Chat specific */
+.fixed {
+    position: fixed;
+}
+
+.bottom-4 {
+    bottom: 1rem;
+}
+
+.right-4 {
+    right: 1rem;
+}
+
+.w-80 {
+    width: 20rem;
+}
+
+.h-96 {
+    height: 24rem;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+.border-t {
+    border-top-width: 1px;
+    border-top-color: #E5E7EB;
+}
+
+.border {
+    border-width: 1px;
+    border-color: #E5E7EB;
+}
+
+.focus\:outline-none:focus {
+    outline: none;
+}
+
+.focus\:border-red-600:focus {
+    border-color: #DC2626;
+}
+
+.hover\:bg-red-700:hover {
+    background-color: #B91C1C;
+}
+
+.hover\:text-gray-200:hover {
+    color: #E5E7EB;
+}
+
+.transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Chat messages */
+.chat-message {
+    margin-bottom: 1rem;
+}
+
+.chat-message.user {
+    text-align: right;
+}
+
+.chat-message.bot {
+    text-align: left;
+}
+
+.message-content {
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.user .message-content {
+    background-color: #DC2626;
+    color: white;
+}
+
+.bot .message-content {
+    background-color: #F3F4F6;
+    color: #1F2937;
+}

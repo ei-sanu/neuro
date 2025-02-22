@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Information Center</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <h1>Skin Disease Information Center</h1>
+            <ul>
+                <li><a href="#general">General Info</a></li>
+                <li><a href="#common">Common Diseases</a></li>
+                <li><a href="#cancer">Skin Cancer</a></li>
+                <li><a href="#prevention">Prevention</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="general">
+            <h2>General Information About Skin Diseases</h2>
+            <p>Skin diseases are conditions that affect the skin's structure and function, causing changes in appearance, texture, and overall health. They can be categorized into bacterial, viral, fungal, parasitic, autoimmune, allergic, and genetic conditions.</p>
+            <div class="info-box">
+                <h3>Common Symptoms</h3>
+                <ul>
+                    <li>Itching and redness</li>
+                    <li>Swelling and inflammation</li>
+                    <li>Bumps and blisters</li>
+                    <li>Scaling and dryness</li>
+                    <li>Abnormal growths</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="common">
+            <h2>Common Skin Diseases</h2>
+            
+            <div class="disease-card">
+                <h3>Acne</h3>
+                <p><strong>Definition:</strong> A skin condition occurring when hair follicles become clogged with oil and dead skin cells.</p>
+                <p><strong>Symptoms:</strong> Pimples, blackheads, whiteheads, cysts</p>
+                <p><strong>Treatment:</strong> Topical treatments, antibiotics, retinoids</p>
+            </div>
+
+            <div class="disease-card">
+                <h3>Eczema</h3>
+                <p><strong>Definition:</strong> An inflammatory skin condition characterized by dry, itchy patches.</p>
+                <p><strong>Symptoms:</strong> Red, inflamed skin, itching, scaling</p>
+                <p><strong>Treatment:</strong> Moisturizing lotions, topical corticosteroids</p>
+            </div>
+
+            <div class="disease-card">
+                <h3>Psoriasis</h3>
+                <p><strong>Definition:</strong> An autoimmune condition causing rapid skin cell growth.</p>
+                <p><strong>Symptoms:</strong> Red patches with silvery scales</p>
+                <p><strong>Treatment:</strong> Topical treatments, phototherapy, biologics</p>
+            </div>
+        </section>
+
+        <section id="cancer">
+            <h2>Skin Cancer Types</h2>
+            <div class="cancer-info">
+                <div class="cancer-type">
+                    <h3>Melanoma</h3>
+                    <p>The most dangerous form of skin cancer, developing from melanocytes.</p>
+                    <p><strong>Warning Signs:</strong> ABCDE rule (Asymmetry, Border irregularity, Color variation, Diameter, Evolution)</p>
+                </div>
+                <div class="cancer-type">
+                    <h3>Basal Cell Carcinoma</h3>
+                    <p>The most common type of skin cancer, typically caused by sun exposure.</p>
+                </div>
+                <div class="cancer-type">
+                    <h3>Squamous Cell Carcinoma</h3>
+                    <p>Develops in the squamous cells of the skin's outer layer.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="prevention">
+            <h2>Prevention Tips</h2>
+            <div class="prevention-tips">
+                <ul>
+                    <li>Use sunscreen daily (SPF 30 or higher)</li>
+                    <li>Avoid excessive sun exposure</li>
+                    <li>Maintain good skin hygiene</li>
+                    <li>Stay hydrated</li>
+                    <li>Eat a balanced diet</li>
+                    <li>Regular skin checks</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <h3>Skin Health Assistant</h3>
+            <button id="minimize-chat">−</button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Ask about skin conditions...">
+            <button id="send-message">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -29,15 +29,15 @@
     </header>
 
     <main class="container">
-   
+
         <h1>About Us</h1>
-        
+
         <section class="description card">
             <p>Neurowell is an innovative AI-powered mental health platform designed to provide 24/7 support to individuals facing emotional distress. Our mission is to break the barriers of traditional mental health care by offering immediate, confidential, and personalized assistance. Through AI-driven chatbots, guided meditation, and self-improvement tools, we help users manage stress, anxiety, and emotional struggles effectively.</p>
             <p>We understand that seeking mental health support can sometimes be daunting due to societal stigma and accessibility issues. Neurowell aims to eliminate these hurdles by providing an intuitive, easy-to-use digital space where users can express their emotions freely. Whether you need instant support, emotional validation, or expert-backed coping strategies, our platform ensures that help is just a click away.</p>
             <p>Our website integrates various psychological methodologies, such as Cognitive Behavioral Therapy (CBT) techniques, mindfulness exercises, and data-driven mood tracking. These features collectively enable users to gain better control over their emotions, track progress, and build a positive mental well-being routine.</p>
         </section>
-        
+
         <section class="effectiveness card">
             <h2>How is our website effective?</h2>
             <p>Neurowell is effective because it provides 24/7 mental health support through AI-powered chatbot assistance. Users can receive instant emotional support, guided meditation, and coping strategies without the need for human intervention, making it accessible at any time. Our AI continuously learns from interactions, improving its ability to provide personalized help tailored to each user's emotional state.</p>
@@ -49,21 +49,21 @@
                 <h2>Team Leader: Somesh Ranjan Biswah</h2>
                 <p>Somesh is the visionary behind Neurowell, leading the initiative with a strong focus on mental health advocacy and technological innovation. With extensive experience in both mental health and technology sectors, Somesh drives our mission to make mental health support accessible to all.</p>
             </article>
-            
-            <article class="team-member card">
+
+            <!-- <article class="team-member card">
                 <h2>Team Member: Anshit Kumar</h2>
                 <p>Anshit plays a critical role in developing the AI algorithms that power Neurowell. His expertise in machine learning and natural language processing ensures our platform provides intelligent, empathetic responses to users' needs.</p>
-            </article>
-            
+            </article> -->
+
             <article class="team-member card">
-                <h2>Team Member: Hemanta Kumar Behera</h2>
-                <p>Hemanta specializes in front-end development and UI/UX design, creating intuitive and accessible interfaces that make mental health support more approachable. His focus on user experience ensures our platform remains welcoming and easy to navigate.</p>
+                <h2>Team Member: Rohit</h2>
+                <p>Rohit specializes in front-end development and UI/UX design, creating intuitive and accessible interfaces that make mental health support more approachable. His focus on user experience ensures our platform remains welcoming and easy to navigate.</p>
             </article>
-            
+<!--
             <article class="team-member card">
                 <h2>Team Member: Subham Kumar</h2>
                 <p>Subham focuses on backend development and system architecture, ensuring our platform's reliability and security. His expertise in scalable systems architecture keeps Neurowell running smoothly while maintaining user privacy and data protection.</p>
-            </article>
+            </article> -->
         </section>
     </main>
     <footer class="footer">
@@ -118,10 +118,10 @@
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.getElementById('nav-menu');
             const body = document.body;
-            
+
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-            
+
             // Prevent scrolling when menu is open
             if (navMenu.classList.contains('active')) {
                 body.style.overflow = 'hidden';
@@ -129,25 +129,25 @@
                 body.style.overflow = '';
             }
         }
-    
+
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.getElementById('nav-menu');
-            
+
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
-    
+
         // Close menu when pressing Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 const hamburger = document.querySelector('.hamburger');
                 const navMenu = document.getElementById('nav-menu');
-                
+
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';

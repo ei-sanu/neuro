@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respiratory Health Center</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-6">
+      <div class="container">
+        <div class="header-content">
+          <i data-lucide="lungs" class="icon-large"></i>
+          <h1 class="text-3xl font-bold">Respiratory Health Center</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow">
+      <div class="container">
+        <div class="nav-buttons">
+          <button class="nav-btn active" data-section="overview">Overview</button>
+          <button class="nav-btn" data-section="conditions">Conditions</button>
+          <button class="nav-btn" data-section="prevention">Prevention</button>
+          <button class="nav-btn" data-section="treatment">Treatment</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-8">
+      <div class="max-w-4xl">
+        <!-- Overview Section -->
+        <section id="overview" class="content-section active">
+          <h2 class="text-2xl font-bold mb-4">Understanding Respiratory Health</h2>
+          <p class="text-gray-700 mb-4">
+            Respiratory diseases affect millions of people worldwide, impacting their ability to breathe
+            and their overall quality of life. Understanding these conditions is crucial for prevention
+            and proper management.
+          </p>
+          <img
+            src="https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=800&q=80"
+            alt="Medical professional examining lungs"
+            class="rounded-lg shadow-lg mb-6"
+          />
+        </section>
+
+        <!-- Conditions Section -->
+        <section id="conditions" class="content-section">
+          <h2 class="text-2xl font-bold mb-4">Common Respiratory Conditions</h2>
+          <div class="grid-2">
+            <div class="condition-card">
+              <h3 class="text-xl font-semibold mb-2">ASTHMA</h3>
+              <p class="text-gray-700 mb-2">A chronic condition where airways become inflamed and narrow.</p>
+              <h4 class="font-semibold mt-2">Symptoms:</h4>
+              <ul class="list-disc">
+                <li>Shortness of breath</li>
+                <li>Wheezing</li>
+                <li>Chest tightness</li>
+                <li>Coughing</li>
+              </ul>
+            </div>
+            <div class="condition-card">
+              <h3 class="text-xl font-semibold mb-2">COPD</h3>
+              <p class="text-gray-700 mb-2">A progressive lung disease making breathing difficult.</p>
+              <h4 class="font-semibold mt-2">Symptoms:</h4>
+              <ul class="list-disc">
+                <li>Chronic cough</li>
+                <li>Sputum production</li>
+                <li>Shortness of breath</li>
+                <li>Wheezing</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Prevention Section -->
+        <section id="prevention" class="content-section">
+          <h2 class="text-2xl font-bold mb-4">Prevention Tips</h2>
+          <div class="white-card">
+            <ul class="prevention-list">
+              <li class="prevention-item">
+                <div class="check-circle">✓</div>
+                <div>
+                  <h3 class="font-semibold">Quit Smoking</h3>
+                  <p class="text-gray-700">The single most important step to prevent respiratory diseases.</p>
+                </div>
+              </li>
+              <li class="prevention-item">
+                <div class="check-circle">✓</div>
+                <div>
+                  <h3 class="font-semibold">Regular Exercise</h3>
+                  <p class="text-gray-700">Helps improve lung function and overall respiratory health.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Treatment Section -->
+        <section id="treatment" class="content-section">
+          <h2 class="text-2xl font-bold mb-4">Treatment Options</h2>
+          <div class="white-card">
+            <p class="text-gray-700 mb-4">
+              Treatment varies depending on the specific condition and its severity. Common approaches include:
+            </p>
+            <ul class="treatment-list">
+              <li>Medications (inhalers, bronchodilators, steroids)</li>
+              <li>Oxygen therapy</li>
+              <li>Pulmonary rehabilitation</li>
+              <li>Lifestyle modifications</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="chatbot">
+      <button id="chat-toggle" class="chat-toggle">
+        <i data-lucide="message-circle"></i>
+      </button>
+      <div id="chat-window" class="chat-window hidden">
+        <div class="chat-header">
+          <h3 class="font-semibold">Respiratory Health Assistant</h3>
+          <button id="close-chat" class="close-chat">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <div class="chat-input">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Ask about respiratory health..."
+            class="message-input"
+          />
+          <button id="send-message" class="send-button">
+            <i data-lucide="send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

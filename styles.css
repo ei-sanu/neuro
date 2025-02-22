@@ -6,8 +6,8 @@
 }
 
 body {
-    background: #111111;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #333333;
 }
 
 .header {
@@ -18,10 +18,11 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(18, 18, 18, 0.95);
+    background-color: #ffffff;
     backdrop-filter: blur(10px);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 .logo-container {
@@ -44,35 +45,51 @@ body {
 nav a {
     margin-left: 2rem;
     text-decoration: none;
-    color: #ffffff;
+    color: #3498db;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #ff3333;
+    color: #2980b9;
 }
 
 .hero {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 4rem 6rem;
-    gap: 3rem;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
-    margin-top: 70px;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
 }
 
 .hero-content {
-    max-width: 700px;
-    padding-top: 2rem;
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-video {
+    flex: 1;
+    max-width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
 }
 
 h1 {
     font-size: 4rem;
     margin-bottom: 2rem;
-    color: #ffffff;
+    color: #333333;
     text-shadow: 0 0 20px rgba(255, 51, 51, 0.2);
     line-height: 1.2;
 }
@@ -80,7 +97,7 @@ h1 {
 .subtitle {
     font-size: 1.4rem;
     line-height: 1.8;
-    color: #cccccc;
+    color: #666666;
     margin-bottom: 3rem;
 }
 
@@ -104,10 +121,10 @@ h1 {
 
 .chat-preview {
     position: relative;
-    background: rgba(18, 18, 18, 0.95);
+    background-color: #ffffff;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 400px;
     border: 1px solid rgba(255, 51, 51, 0.2);
     margin-top: 5cm;
@@ -115,12 +132,12 @@ h1 {
 }
 
 .chat-message {
-    background: rgba(34, 34, 34, 0.8);
+    background-color: #f5f5f5;
     padding: 1rem;
     border-radius: 10px;
     margin-bottom: 1rem;
     border-left: 3px solid #ff3333;
-    color: #ffffff;
+    color: #333333;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -131,20 +148,22 @@ h1 {
 .hamburger {
     display: flex;
     flex-direction: column;
-    cursor: pointer;
-    background: none;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
     border: none;
-    padding: 10px;
-    z-index: 1000;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
 }
 
 .hamburger .bar {
     width: 30px;
     height: 3px;
     background-color: #ff3333;
-    margin: 4px 0;
-    transition: 0.4s;
     border-radius: 3px;
+    transition: all 0.3s linear;
 }
 
 .hamburger.active .bar:nth-child(1) {
@@ -161,39 +180,38 @@ h1 {
 
 .nav-links {
     display: none;
-    flex-direction: column;
-    background: #000000;
     position: fixed;
     top: 70px;
     right: 0;
+    background: #ffffff;
     width: 250px;
-    height: calc(100vh - 70px);
-    text-align: center;
     padding: 20px;
-    border-radius: 0 0 15px 15px;
-    border-left: 1px solid rgba(255, 51, 51, 0.2);
-    z-index: 999;
+    border-radius: 0 0 0 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-links.show {
     display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .nav-links a {
     display: block;
     padding: 12px;
-    color: #ffffff;
+    color: #333333;
     text-decoration: none;
     transition: all 0.3s ease;
     margin: 5px 0;
     border-radius: 8px;
-    background: rgba(26, 26, 26, 0.5);
-    border: 1px solid rgba(255, 51, 51, 0.1);
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
 }
 
 .nav-links a:hover {
-    background: rgba(255, 51, 51, 0.15);
-    color: #ff3333;
+    background: #ff3333;
+    color: #ffffff;
     transform: translateX(5px);
 }
 
@@ -204,9 +222,9 @@ h1 {
 
 .language-btn {
     background: none;
-    border: 1px solid #ff3333;
+    border: 1px solid #e0e0e0;
     border-radius: 5px;
-    color: #fff;
+    color: #333333;
     padding: 8px 15px;
     cursor: pointer;
     display: flex;
@@ -219,7 +237,7 @@ h1 {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #fff;
+    background: #ffffff;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -259,7 +277,7 @@ h1 {
     .chat-preview {
         width: 100%;
         margin-top: 3cm;
-        background: rgba(18, 18, 18, 0.98);
+        background: #ffffff;
     }
 
     nav {
@@ -268,7 +286,7 @@ h1 {
 
     .nav-links {
         width: 100%;
-        background: rgba(40, 40, 40, 0.98);
+        background: rgba(255, 255, 255, 0.98);
         border-radius: 0;
     }
 
@@ -283,6 +301,7 @@ h1 {
 
     .header {
         padding: 1rem;
+        margin-bottom: 1rem;
     }
 
     .logo-container {
@@ -303,7 +322,7 @@ h1 {
         top: 70px;
         left: 0;
         width: 100%;
-        background: rgba(26, 26, 26, 0.98);
+        background: rgba(255, 255, 255, 0.98);
         padding: 1rem;
         flex-direction: column;
         align-items: center;
@@ -352,7 +371,8 @@ h1 {
         padding: 2rem 1rem;
         flex-direction: column;
         text-align: center;
-        margin-top: 70px;
+        margin-top: 2rem;
+        padding-top: 1rem;
     }
 
     .hero-content {
@@ -659,10 +679,10 @@ body.overlay-active .chat-preview {
 }
 
 .footer {
-    background: rgba(18, 18, 18, 0.98);
+    background-color: #ffffff;
     padding: 4rem 2rem 1rem;
     margin-top: 4rem;
-    border-top: 1px solid rgba(255, 51, 51, 0.1);
+    border-top: 1px solid #e0e0e0;
 }
 
 .footer-content {
@@ -674,7 +694,7 @@ body.overlay-active .chat-preview {
 }
 
 .footer-section {
-    color: #ffffff;
+    color: #333333;
 }
 
 .footer-section h3 {
@@ -685,7 +705,8 @@ body.overlay-active .chat-preview {
 
 .footer-section p,
 .footer-section a {
-    color: #b3b3b3;
+    color: #666666;
+    opacity: 0.8;
     margin-bottom: 0.8rem;
     display: block;
     text-decoration: none;
@@ -693,7 +714,8 @@ body.overlay-active .chat-preview {
 }
 
 .footer-section a:hover {
-    color: #ff3333;
+    opacity: 1;
+    color: #3498db;
 }
 
 .footer-section i {
@@ -709,26 +731,29 @@ body.overlay-active .chat-preview {
 
 .social-links a {
     font-size: 1.5rem;
-    color: #b3b3b3;
+    color: #666666;
+    opacity: 0.8;
 }
 
 .social-links a:hover {
+    opacity: 1;
     color: #ff3333;
 }
 
 .certifications {
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 51, 51, 0.1);
+    border-top: 1px solid #e0e0e0;
 }
 
 .footer-bottom {
+    background-color: #f5f5f5;
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 2rem;
     margin-top: 3rem;
     text-align: center;
     border-top: 1px solid rgba(255, 51, 51, 0.1);
-    color: #888;
+    color: #666666;
 }
 
 .footer-bottom a {
@@ -762,6 +787,7 @@ body.overlay-active .chat-preview {
 @media screen and (max-width: 768px) {
     .header {
         padding: 1rem;
+        margin-bottom: 1rem;
     }
 
     .nav-links {
@@ -770,7 +796,7 @@ body.overlay-active .chat-preview {
         top: 70px;
         left: 0;
         width: 100%;
-        background: rgba(26, 26, 26, 0.98);
+        background: rgba(255, 255, 255, 0.98);
         padding: 1rem;
         flex-direction: column;
         align-items: center;
@@ -819,7 +845,8 @@ body.overlay-active .chat-preview {
         padding: 2rem 1rem;
         flex-direction: column;
         text-align: center;
-        margin-top: 70px;
+        margin-top: 2rem;
+        padding-top: 1rem;
     }
 
     .hero-content {
@@ -922,27 +949,125 @@ body.overlay-active .chat-preview {
 }
 
 .chatbot-popup {
-    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 1200px;
-    height: 90vh;
+    width: 95vw;
+    /* Increased width */
+    height: 95vh;
+    max-width: 1400px;
+    /* Increased max-width */
+    min-width: 800px;
+    /* Added minimum width */
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    display: none;
+    overflow: hidden;
     z-index: 1000;
-    resize: both;
-    overflow: auto;
-    min-width: 320px;
-    min-height: 500px;
+    transition: all 0.3s ease;
 }
 
 .chatbot-popup.active {
     display: flex;
     flex-direction: column;
+    animation: popupScale 0.3s ease;
+}
+
+@keyframes popupScale {
+    from {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Update mobile responsiveness */
+@media (max-width: 768px) {
+    .chatbot-popup {
+        width: 95vw;
+        height: 90vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+    }
+}
+
+.bot-message {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-prefix {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.medical-disclaimer {
+    font-size: 0.8em;
+    color: #ff3333;
+    font-style: italic;
+    margin-top: 5px;
+    border-top: 1px solid rgba(255, 51, 51, 0.2);
+    padding-top: 5px;
+}
+
+.start-chat-btn {
+    background: #ff3333;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 51, 51, 0.2);
+}
+
+.start-chat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 51, 51, 0.3);
+}
+
+.start-chat-btn i {
+    font-size: 1.2rem;
+}
+
+.chatbot-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 500px;
+    /* Increased from 360px */
+    height: 650px;
+    /* Slightly increased for better proportion */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    display: none;
+    overflow: hidden;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.chatbot-popup.active {
+    display: block;
     animation: slideIn 0.3s ease;
 }
 
@@ -950,205 +1075,91 @@ body.overlay-active .chat-preview {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background: #1a1a1a;
-    color: white;
-    border-radius: 10px 10px 0 0;
+    padding: 15px 20px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .close-chat {
-    background: transparent;
+    background: none;
     border: none;
-    color: #ff3333;
-    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
 }
 
-close-chat:hover {
-    transform: scale(1.1);
+.close-chat:hover {
+    color: #ff3333;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+#chatbot-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    /* Increased width */
+    height: 95vh;
+    max-width: 1400px;
+    /* Increased max-width */
+    min-width: 800px;
+    /* Added minimum width */
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    display: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#chatbot-popup.active {
+    display: block;
+    animation: popupScale 0.3s ease;
 }
 
 #chatbot-frame {
     width: 100%;
     height: calc(100% - 60px);
     border: none;
+    display: block;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
+/* Add responsive adjustments */
+@media (max-width: 850px) {
+    #chatbot-popup {
+        min-width: unset;
+        width: 95vw;
+        height: 90vh;
     }
 }
 
-@media (max-width: 650px) {
+/* Add responsive design */
+@media (max-width: 968px) {
     .hero {
-        padding: 2rem;
-        min-height: auto;
-        margin-top: 60px;
-    }
-
-    h1 {
-        font-size: 2.8rem;
-    }
-
-    .subtitle {
-        font-size: 1.2rem;
-    }
-
-    .chat-preview {
-        width: 100%;
-        margin-top: 3cm;
-        background: rgba(18, 18, 18, 0.98);
-    }
-
-    nav {
-        display: none;
-    }
-
-    .nav-links {
-        width: 100%;
-        background: rgba(40, 40, 40, 0.98);
-        border-radius: 0;
-    }
-
-    .nav-links a {
-        width: 90%;
-        margin: 5px auto;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .header {
-        padding: 1rem;
-    }
-
-    .logo-container {
-        gap: 0.5rem;
-    }
-
-    .logo-text {
-        font-size: 1.2rem;
-    }
-
-    .header {
-        padding: 1rem;
-    }
-
-    .nav-links {
-        display: none;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: rgba(26, 26, 26, 0.98);
-        padding: 1rem;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 24px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 1000;
-    }
-
-    .bar {
-        width: 100%;
-        height: 3px;
-        background-color: #ff3333;
-        border-radius: 3px;
-        transition: all 0.3s ease;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(10px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
-    }
-
-    .hero {
-        padding: 2rem 1rem;
         flex-direction: column;
         text-align: center;
-        margin-top: 70px;
+        padding: 2rem 1rem;
     }
 
-    .hero-content {
-        width: 100%;
-        padding: 0 1rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
-
-    .chat-preview {
+    .hero-video {
         width: 100%;
         margin-top: 2rem;
-    }
-
-    /* Footer Mobile Styles */
-    .footer-content {
-        flex-direction: column;
-        padding: 2rem 1rem;
-    }
-
-    .footer-section {
-        width: 100%;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .chatbot-popup {
-        width: 95%;
-        height: 95vh;
-        max-width: none;
-        border-radius: 8px;
-    }
-
-    #chatbot-frame {
-        height: calc(100% - 50px);
     }
 }
