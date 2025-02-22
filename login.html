@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111111;
+            padding: 20px;
+        }
+
+        .container {
+            margin-top: 80px;
+            max-width: 500px;
+            width: 100%;
+            background: #1a1a1a;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(255, 51, 51, 0.15);
+            border: 1px solid rgba(255, 51, 51, 0.1);
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+            margin-bottom: 20px;
+            color: #ff3333;
+        }
+
+        .title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            background: #ff3333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .form-group input {
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #333;
+            padding-left: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #2a2a2a;
+            color: #ffffff;
+        }
+
+        .form-group input:focus {
+            border-color: #ff3333;
+            box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.1);
+        }
+
+        .error {
+            color: #ff3333;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        button {
+            height: 45px;
+            width: 100%;
+            background: #ff3333;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #ff4d4d;
+            transform: translateY(-1px);
+        }
+
+        .success-message {
+            display: none;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 51, 51, 0.1);
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff3333;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 35px;
+            height: 4px;
+            background-color: #ff3333;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin: 3px 0;
+        }
+
+        #nav-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            background: rgba(26, 26, 26, 0.98);
+            padding: 2rem;
+            transition: 0.3s ease;
+            border-radius: 0 0 0 15px;
+            box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #nav-menu.active {
+            right: 0;
+        }
+
+        #nav-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        #nav-menu a:hover {
+            background: rgba(255, 51, 51, 0.1);
+            color: #ff3333;
+        }
+
+        .active {
+            color: #ff3333 !important;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <span class="logo-text">Neurowell</span>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="active">Login</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="title">Sign Up</div>
+        <form id="signupForm" novalidate>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+                <div class="error" id="username-error">Username must be at least 3 characters long</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                <div class="error" id="email-error">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <div class="error" id="password-error">Password must be at least 8 characters long</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" required>
+                <div class="error" id="confirm-password-error">Passwords do not match</div>
+            </div>
+            
+            <button type="submit">Sign Up</button>
+            <div class="success-message" id="success-message">Successfully signed up!</div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('signupForm');
+        const username = document.getElementById('username');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+        const successMessage = document.getElementById('success-message');
+
+        function showError(input) {
+            const error = document.getElementById(`${input.id}-error`);
+            error.style.display = 'block';
+        }
+
+        function hideError(input) {
+            const error = document.getElementById(`${input.id}-error`);
+            error.style.display = 'none';
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validateForm() {
+            let isValid = true;
+
+            if (username.value.length < 3) {
+                showError(username);
+                isValid = false;
+            } else {
+                hideError(username);
+            }
+
+            if (!validateEmail(email.value)) {
+                showError(email);
+                isValid = false;
+            } else {
+                hideError(email);
+            }
+
+            if (password.value.length < 8) {
+                showError(password);
+                isValid = false;
+            } else {
+                hideError(password);
+            }
+
+            if (password.value !== confirmPassword.value) {
+                showError(confirmPassword);
+                isValid = false;
+            } else {
+                hideError(confirmPassword);
+            }
+
+            return isValid;
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                successMessage.style.display = 'block';
+                form.reset();
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    window.location.href = 'index.html';
+                }, 2000);
+            }
+        });
+
+        const inputs = [username, email, password, confirmPassword];
+        inputs.forEach(input => {
+            input.addEventListener('input', () => hideError(input));
+        });
+        function toggleMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+    </script>
+</body>
+</html>
