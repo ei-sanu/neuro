@@ -105,5 +105,6 @@ If you're experiencing a mental health emergency:
 - Beta testers and early users
 
 ---
-
+OPEN THE WEBPAGE VIA THIS LINK - 
+https://main.d32nzpl3qsx2ag.amplifyapp.com/#
 Built with ❤️ by the NeuroWell Team
