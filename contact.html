@@ -24,7 +24,7 @@
             </svg>
             <span class="logo-text">Neurowell</span>
         </div>
-        
+
         <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -36,7 +36,7 @@
             <a href="features.html">Features</a>
             <a href="about.html">About Us</a>
             <a href="contact.html" class="active">Contact</a>
-            <a href="login.html" class="cta-button">Login</a>
+            <!-- <a href="login.html" class="cta-button">Login</a> -->
         </nav>
     </header>
 
@@ -113,7 +113,7 @@
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             const menuOverlay = document.querySelector('.menu-overlay');
-            
+
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('show');
             menuOverlay?.classList.toggle('show');
@@ -125,7 +125,7 @@
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             const menuOverlay = document.querySelector('.menu-overlay');
-            
+
             if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('show');
